@@ -5,7 +5,6 @@ for i in range (test):
     house=input()
     total=input()
     total=total.split()
-    print(total)
     nonSum = 0
     parSum = 0
 
