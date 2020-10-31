@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
-int bubbleSort(int arr[], int n){
+long int bubbleSort(long int arr[], long int n){
 	bool flag = true;
-	int i, j;
-	int contador = 0;
+	long int i, j;
+	long int contador = 0;
 	for (i=0; i< n-1 && flag; i++){
 		flag = false;
 		for ( j=0; j < n-1-i; j++){
 			if (arr[j+1] < arr[j]){
 				contador++;
-				int aux = arr[j];
+				long int aux = arr[j];
 				arr[j] = arr[j+1];
 				arr[j+1] = aux;
 				flag = true;
@@ -19,11 +19,11 @@ int bubbleSort(int arr[], int n){
 	return contador;
 }
 int main(){
-	int n;
+	long int n;
 	cin >> n;
-	int arr[n];
-	for (int i=0; i < n; i++){
-		int valor;
+	long int arr[n];
+	for (long int i=0; i < n; i++){
+		long int valor;
 		cin >> valor;
 		arr[i] = valor;
 	}
