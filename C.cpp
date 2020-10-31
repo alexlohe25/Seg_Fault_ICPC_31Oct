@@ -22,10 +22,10 @@ void traduce(vector <string> u,vector <string> v, string msg){
 		}
 		i++;
 	}
-	cout << endl;
+	if (flag == false)
+		cout << u[i] << " ";
 }
 void obtenPalabras(vector <string> u,vector <string> v,string msg){
-	cout << "entre al obtenPalabras" << endl;
 	if (msg.size() > 0){
 		int i = 0;
 		int last = i;
@@ -34,9 +34,7 @@ void obtenPalabras(vector <string> u,vector <string> v,string msg){
 			i++;
 		}
 		string palabra = msg.substr(msg[0], msg[last]);
-		cout << "Palabra a buscar: " << palabra << endl;
 		string resto = msg.substr(msg[i + 1], msg[msg.size()-1]);
-		cout << "Resto del mensaje: " << resto << endl;
 		traduce(u,v,palabra);
 		obtenPalabras(u,v,resto);
 	}
@@ -47,7 +45,7 @@ int main(){
 	string msg;
 	cin.ignore();
 	getline(cin,msg);
-	cout << "Palabra: " << msg << endl;
 	obtenPalabras(u,v,msg);
+	cout << endl;
 	return 0;
 }
