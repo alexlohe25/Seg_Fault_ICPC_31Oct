@@ -10,7 +10,7 @@ int main() {
   cin >> test;
   for(int i = 0; i < test; i++) {
     cin >> password;
-    bool size = false, upper = false, lower = false, sChar = false, num = false;
+    bool size = false, upper = false, lower = false, sChar = false, num = false, numF = false;
     if(password.size() >= 10) size = true;
     for(int i = 0; i < password.size(); i++) {
       if(!upper) {
@@ -25,14 +25,14 @@ int main() {
         if(!isalpha(password[i]) && !isdigit(password[i])) sChar = true;
       }
 
-      if(!num) {
+      if(!numF) {
         if(isdigit(password[i])) {
           num = true;
+          numF = true;
           bool num1 = isdigit(password[i + 1]);
           if(num1) {
             if(password[i] + 1 == password[i+1] || password[i] - 1 == password[i+1]) {
               num = false;
-              break;
             }
           }
         }
@@ -53,7 +53,7 @@ int main() {
 
     count++;
     cout << "Assertion number #" << count << ": ";
-    if(valCheck == 5) cout << "Strong password" << endl;
+    if(valCheck == 5) cout << "Strong" << endl;
     else if(valCheck == 4) cout << "Good" << endl;
     else if(valCheck == 3) cout << "Weak" << endl;
     else cout << "Rejected" << endl;
